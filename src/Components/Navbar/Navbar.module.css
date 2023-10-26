@@ -1,0 +1,10 @@
+.nav {
+  padding: 20px;
+    grid-area: n;
+    background-color: rgb(216, 98, 98);
+  } 
+
+  .nav a {
+    text-decoration: none;
+  }
+
