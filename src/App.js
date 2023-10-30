@@ -9,9 +9,6 @@ import Music from './Components/Music/Music';
 import News from './Components/News/News';
 import Settings from './Components/Settings/Settings';
 
-
-
-
 const App = (props) => {
 
   return (
@@ -26,7 +23,6 @@ const App = (props) => {
             <Route path="Music" element={<Music />} />
             <Route path="News" element={<News />} />
             <Route path='Settings' element={<Settings />} />
-
           </Routes>
         </div>
       </div>

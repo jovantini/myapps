@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render"
+
 //Данные для поста
 let post = [
   { id: 1, message: "Hi, how are you?", likeCount: 15 },
@@ -33,13 +35,14 @@ let state = {
 export let addPost = (postMessage) => {
   let newPost = {
     id: 5,
-    message:postMessage,
+    message: postMessage,
     likeCount: 122
 
   };
   state.posts.push(newPost)
+  rerenderEntireTree(state, addPost)
   console.log(state)
-  debugger
+
 }
 
 export default state
