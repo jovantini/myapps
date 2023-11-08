@@ -29,7 +29,8 @@ let message = [
 let state = {
   posts: post,
   dialogs: dialogs,
-  message: message
+  message: message,
+  newPostText: "it-kamasutra"
 }
 
 export let addPost = (postMessage) => {
@@ -40,9 +41,18 @@ export let addPost = (postMessage) => {
 
   };
   state.posts.push(newPost)
-  rerenderEntireTree(state, addPost)
+  rerenderEntireTree(state, addPost, updateNewPostText)
   console.log(state)
 
 }
+
+export let updateNewPostText = (newText) => {
+  state.newPostText = newText
+  console.log(state)
+  
+
+
+}
+
 
 export default state

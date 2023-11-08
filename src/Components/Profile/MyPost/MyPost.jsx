@@ -3,28 +3,37 @@ import mPost from "./MyPost.module.css"
 import Post from "./Post/Post";
 //import addPost from "./../../../Scripts/addPost.js"
 
+
+
 const MyPost = (props) => {
-   
+
     let postElements = props.post.map(p => <Post message={p.message} likeCount={p.likeCount} />)
 
     let newPostElement = React.createRef();
 
     const addPost1 = () => {
         let text = newPostElement.current.value;
-        
         props.addPost(text)
         newPostElement.current.value = ""
     }
-    
+
+    const onPostChange =() => {
+      
+        let text = newPostElement.current.value;
+        
+        props.updateNewPostText(text)
+    }
+ 
+
     return (
         <div>
             My post
             <div>
                 <div>
-                    <textarea ref={newPostElement}></textarea>
+                    <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText} />
                 </div>
                 <div>
-                    <button onClick={addPost1}>Add post</button>
+                    <button onClick={addPost1} >Add post</button>
                 </div>
             </div>
 
